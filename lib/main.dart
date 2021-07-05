@@ -7,7 +7,7 @@ void main() async {
   wsToken = await getStorage('auth');
   runApp(
     MaterialApp(
-      title: "VB Gestor Estabelecimento",
+      title: "Vai Bem Estabelecimentos",
       theme: appThemeData,
       debugShowCheckedModeBanner: false,
       home: Template(),

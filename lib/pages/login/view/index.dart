@@ -58,21 +58,16 @@ class LoginPage extends GetView<LoginController> {
                 ),
               );
             } else {
-              return Scaffold(
-                resizeToAvoidBottomInset: false,
-                body: Container(
-                  height: Get.mediaQuery.size.height,
-                  width: Get.mediaQuery.size.width,
-                  child: Center(
-                    child: SingleChildScrollView(
-                      child: Container(
-                        padding: EdgeInsets.all(5),
-                        constraints: BoxConstraints(
-                          maxHeight: 500,
-                          maxWidth: 350,
-                        ),
-                        child: FormLogin(),
-                      ),
+              return Material(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: MediaQuery.of(context).size.height,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height,
+                      child: FormLogin(),
                     ),
                   ),
                 ),

@@ -35,6 +35,11 @@ class Template extends StatefulWidget {
 }
 
 class _TemplateState extends State<Template> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   final ctrl = Get.put(ControleTemplate());
   @override
   Widget build(BuildContext context) {
@@ -55,7 +60,7 @@ class _TemplateState extends State<Template> {
                     toolbarHeight: 45,
                     elevation: 0,
                     title: Text(
-                      'VB Estabelecimentos',
+                      'Vai Bem Estabelecimentos',
                       style: TextStyle(
                         color: Colors.white,
                       ),

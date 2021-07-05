@@ -1,5 +1,3 @@
 import 'package:get/get.dart';
 
-class RestClient extends GetConnect {
-  RestClient() {}
-}
+class RestClient extends GetConnect {}

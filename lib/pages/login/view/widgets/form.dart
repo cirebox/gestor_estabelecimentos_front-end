@@ -21,7 +21,7 @@ class _FormLoginState extends State<FormLogin> {
   final controller = Get.find<LoginController>();
   bool lembrarme = false;
 
-  Widget _acessar() => GestureDetector(
+  Widget _acessar() => InkWell(
         child: Container(
           alignment: Alignment.center,
           width: 320,
@@ -77,7 +77,7 @@ class _FormLoginState extends State<FormLogin> {
         children: [
           SizedBox(height: 20),
           Text(
-            'VB Estabelecimentos',
+            'Vai Bem\nEstabelecimentos',
             style: TextStyle(
                 color: Colors.purple,
                 fontSize: 30,

@@ -39,7 +39,7 @@ class _ListaState extends State<Lista> {
                     title: Text(obj.nome!),
                     //subtitle: Text(obj.id.toString()),
                     trailing: Container(
-                      width: 80,
+                      width: 100,
                       child: Row(
                         children: [
                           IconButton(
