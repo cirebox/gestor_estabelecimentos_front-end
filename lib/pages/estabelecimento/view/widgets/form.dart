@@ -90,7 +90,9 @@ class _FormTelaState extends State<FormTela> {
                     ctrl.complemento.text = objcep.complemento!;
                     ctrl.bairro.text = objcep.bairro!;
                     ctrl.cidade.text = objcep.localidade!;
-                    ctrl.uf.text = objcep.uf!;
+                    setState(() {
+                      ctrl.uf.text = objcep.uf!;
+                    });
                   },
                 ),
                 FieldForm(
@@ -113,10 +115,40 @@ class _FormTelaState extends State<FormTela> {
                   controller: ctrl.cidade,
                   maxLength: 30,
                 ),
-                FieldForm(
+                FieldComboBox(
                   label: 'Estado',
                   controller: ctrl.uf,
-                  maxLength: 2,
+                  isrequired: true,
+                  items: [
+                    {'texto': '', 'valor': ''},
+                    {"texto": "Acre", "valor": "AC"},
+                    {"texto": "Alagoas", "valor": "AL"},
+                    {"texto": "Amapá", "valor": "AP"},
+                    {"texto": "Amazonas", "valor": "AM"},
+                    {"texto": "Bahia", "valor": "BA"},
+                    {"texto": "Ceará", "valor": "CE"},
+                    {"texto": "Distrito Federal", "valor": "DF"},
+                    {"texto": "Espírito Santo", "valor": "ES"},
+                    {"texto": "Goiás", "valor": "GO"},
+                    {"texto": "Maranhão", "valor": "MA"},
+                    {"texto": "Mato Grosso", "valor": "MT"},
+                    {"texto": "Mato Grosso do Sul", "valor": "MS"},
+                    {"texto": "Minas Gerais", "valor": "MG"},
+                    {"texto": "Pará", "valor": "PA"},
+                    {"texto": "Paraíba", "valor": "PB"},
+                    {"texto": "Paraná", "valor": "PR"},
+                    {"texto": "Pernambuco", "valor": "PE"},
+                    {"texto": "Piauí", "valor": "PI"},
+                    {"texto": "Rio de Janeiro", "valor": "RJ"},
+                    {"texto": "Rio Grande do Norte", "valor": "RN"},
+                    {"texto": "Rio Grande do Sul", "valor": "RS"},
+                    {"texto": "Rondônia", "valor": "RO"},
+                    {"texto": "Roraima", "valor": "RR"},
+                    {"texto": "Santa Catarina", "valor": "SC"},
+                    {"texto": "São Paulo", "valor": "SP"},
+                    {"texto": "Sergipe", "valor": "SE"},
+                    {"texto": "Tocantins", "valor": "TO"}
+                  ],
                 ),
                 FieldForm(
                   label: 'Complemento',

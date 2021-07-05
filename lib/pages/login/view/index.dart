@@ -63,20 +63,17 @@ class LoginPage extends GetView<LoginController> {
                 body: Container(
                   height: Get.mediaQuery.size.height,
                   width: Get.mediaQuery.size.width,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      SingleChildScrollView(
-                        child: Container(
-                          padding: EdgeInsets.all(5),
-                          constraints: BoxConstraints(
-                            maxHeight: 500,
-                            maxWidth: 350,
-                          ),
-                          child: FormLogin(),
+                  child: Center(
+                    child: SingleChildScrollView(
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        constraints: BoxConstraints(
+                          maxHeight: 500,
+                          maxWidth: 350,
                         ),
+                        child: FormLogin(),
                       ),
-                    ],
+                    ),
                   ),
                 ),
               );

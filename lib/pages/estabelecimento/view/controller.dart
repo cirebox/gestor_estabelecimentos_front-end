@@ -20,6 +20,8 @@ class EstabelecimentoController extends GetxController with StateMixin {
   TextEditingController uf = TextEditingController();
   TextEditingController complemento = TextEditingController();
 
+  TextEditingController ufFiltro = TextEditingController();
+
   @override
   void onInit() {
     super.onInit();
@@ -138,7 +140,7 @@ class EstabelecimentoController extends GetxController with StateMixin {
   void delete(String iid) async {
     repository.delete(iid).then(
       (data) {
-        if (data.body['status'] == true) {
+        if (data.statusCode == 200 || data.statusCode == 204) {
           Get.snackbar(
             'Removido',
             data.body['message'],
@@ -161,17 +163,6 @@ class EstabelecimentoController extends GetxController with StateMixin {
     );
   }
 
-  void pesquisar(String value) async {
-    change([], status: RxStatus.loading());
-    try {
-      final lista = await repository.getAll({});
-      change(lista, status: RxStatus.success());
-    } catch (e) {
-      print(e);
-      change([], status: RxStatus.error('Erro ao listar!'));
-    }
-  }
-
   Future<CepModel> getCep() async {
     final obj = await repository.getCep(this.cep.text.trim());
     return obj;
@@ -180,7 +171,7 @@ class EstabelecimentoController extends GetxController with StateMixin {
   Future<void> getAll() async {
     change([], status: RxStatus.loading());
     try {
-      final lista = await repository.getAll({});
+      final lista = await repository.getAll(this.ufFiltro.text.trim());
       change(lista, status: RxStatus.success());
     } catch (e) {
       print(e);

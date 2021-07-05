@@ -77,7 +77,7 @@ class _FormLoginState extends State<FormLogin> {
         children: [
           SizedBox(height: 20),
           Text(
-            'VB Estabelecimento',
+            'VB Estabelecimentos',
             style: TextStyle(
                 color: Colors.purple,
                 fontSize: 30,

@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:vaibestabelecimento/pages/estabelecimento/data/model/cepmodel.dart';
 import 'package:vaibestabelecimento/shared/funcoes.dart';
 import 'package:vaibestabelecimento/shared/global.dart';
@@ -15,10 +13,14 @@ class EstabelecimentoRepository {
 
   EstabelecimentoRepository({required this.api});
 
-  Future<List<EstabelecimentoModel>> getAll(Map data) async {
+  Future<List<EstabelecimentoModel>> getAll(String uf) async {
     final _header = await criaHeader();
+    String _queryparametro = '';
+    if (uf != '') {
+      _queryparametro = '?uf=${uf}';
+    }
     final response = await this.api.get(
-      urlBase + '/estabelecimento',
+      urlBase + '/estabelecimento/' + _queryparametro,
       headers: _header,
       decoder: (body) {
         final retorno = body["data"];
@@ -31,6 +33,11 @@ class EstabelecimentoRepository {
         return null;
       },
     );
+
+    if (response.statusCode == 401) {
+      print('Falha ao autenticar');
+    }
+
     if (response.hasError) {
       throw Exception('Erro ao listar estabelecimentos');
     }

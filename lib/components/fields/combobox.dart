@@ -4,12 +4,14 @@ class FieldComboBox extends StatefulWidget {
   final String? label;
   bool? isrequired = false;
   List<Map<String, String>> items = [];
+  VoidCallback? onChanged;
   final TextEditingController controller;
   FieldComboBox(
       {this.label,
       required this.items,
       this.isrequired,
       required this.controller,
+      this.onChanged,
       Key? key})
       : super(key: key);
 
@@ -49,6 +51,9 @@ class _FieldComboBoxState extends State<FieldComboBox> {
           onChanged: (String? value) {
             setState(() {
               widget.controller.text = value!;
+              if (widget.onChanged != null) {
+                widget.onChanged!();
+              }
             });
           },
           hint: Text("Selecione o tipo")),

@@ -106,7 +106,7 @@ class UsuarioController extends GetxController with StateMixin {
   void delete(String iid) async {
     repository.delete(iid).then(
       (data) {
-        if (data.statusCode == 200) {
+        if (data.statusCode == 200 || data.statusCode == 204) {
           Get.snackbar(
             'Removido',
             data.body['message'],
@@ -127,17 +127,6 @@ class UsuarioController extends GetxController with StateMixin {
         }
       },
     );
-  }
-
-  void pesquisar(String value) async {
-    change([], status: RxStatus.loading());
-    try {
-      final lista = await repository.getAll({});
-      change(lista, status: RxStatus.success());
-    } catch (e) {
-      print(e);
-      change([], status: RxStatus.error('Erro ao listar!'));
-    }
   }
 
   Future<void> getAll() async {

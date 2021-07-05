@@ -1,16 +1,18 @@
-# Vai bem Estabelecimento
 
-Projeto para gestão de estabelecimentos
+#  APP VaiBem Estabelecimentos
 
-## Getting Started
+  
 
-This project is a starting point for a Flutter application.
+Projeto para gestão de estabelecimentos, desenvolvido utilizando [Flutter](https://flutter.dev/) com  [Get](https://pub.dev/packages/get/install). 
 
-A few resources to get you started if this is your first Flutter project:
+[Acesse versao web](http://161.35.105.228:4444/#/login)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+**Dados para acesso**
+`email=admin@example.com`
+`senha=123`
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Gerando apk
+rode o comando `flutter build apk`
+
+### Gerando verão web
+rode o comando `flutter build web`
