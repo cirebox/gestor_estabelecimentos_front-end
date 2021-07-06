@@ -1,5 +1,5 @@
 
-#  APP VaiBem Estabelecimentos
+#  APP Gestor de Estabelecimentos
 
 Projeto para gestão de estabelecimentos, desenvolvido utilizando [Flutter](https://flutter.dev/) com  [Get](https://pub.dev/packages/get/install). 
 
